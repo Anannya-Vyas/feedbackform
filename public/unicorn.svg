@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="unicornGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1493" /> <!-- Deep Pink -->
+      <stop offset="50%" stop-color="#FF4500" /> <!-- Red/Orange -->
+      <stop offset="100%" stop-color="#4B0082" /> <!-- Dark Indigo -->
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g transform="translate(250, 250) rotate(-15) translate(-250, -250)">
+    <!-- Main Horn Base -->
+    <path d="M 230 400 L 270 400 L 250 50 Z" fill="url(#unicornGrad)" filter="url(#glow)"/>
+    
+    <!-- Horn Swirls -->
+    <path d="M 235 350 Q 250 365 265 350 M 238 300 Q 250 315 262 300 M 241 250 Q 250 265 259 250 M 244 200 Q 250 210 256 200 M 247 150 Q 250 160 253 150" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+    
+    <!-- Sparkles -->
+    <g fill="#FFF" filter="url(#glow)">
+      <!-- Large Sparkle -->
+      <path d="M 120 180 Q 150 180 150 150 Q 150 180 180 180 Q 150 180 150 210 Q 150 180 120 180 Z" />
+      <!-- Small Sparkle -->
+      <path d="M 320 100 Q 335 100 335 85 Q 335 100 350 100 Q 335 100 335 115 Q 335 100 320 100 Z" />
+      <!-- Medium Sparkle -->
+      <path d="M 350 280 Q 370 280 370 260 Q 370 280 390 280 Q 370 280 370 300 Q 370 280 350 280 Z" />
+    </g>
+    
+    <!-- Constellation lines -->
+    <path d="M 100 100 L 150 150 L 100 200" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+    <circle cx="100" cy="100" r="4" fill="#FF1493"/>
+    <circle cx="150" cy="150" r="3" fill="#FFF"/>
+    <circle cx="100" cy="200" r="5" fill="#FF4500"/>
+  </g>
+</svg>
